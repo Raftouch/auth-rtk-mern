@@ -1,5 +1,7 @@
 - [ ] BACK
 
-    - [x] initial setup
-    - [ ] create routes
-    - [ ] add middleware
+  - [x] initial setup
+  - [x] add error middleware
+  - [x] create routes
+  - [ ] connect to database
+  - [ ]
