@@ -4,5 +4,5 @@
   - [x] add error middleware
   - [x] create routes
   - [x] connect to database
-  - [ ] create a model
-  - [ ]
+  - [x] create user model
+  - [ ] 
