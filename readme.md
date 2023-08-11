@@ -11,5 +11,5 @@
 
 - [ ] FRONT
 
-  - [ ] initial setup
+  - [x] initial setup
   - [ ] add routing
