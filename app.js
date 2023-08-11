@@ -6,6 +6,8 @@ const { notFound, errorHandler } = require('./middleware/error')
 const port = process.env.PORT || 3000
 const db = process.env.MONGO_DB
 
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use('/api/users', require('./routes/user'))
 app.use(notFound, errorHandler)
 
