@@ -62,7 +62,12 @@ const register = asyncHandler(async (req, res) => {
 
 // route     POST /api/users/logout
 const logout = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'Logout User' })
+  res.cookie('token', '', {
+    httpOnly: true,
+    expires: new Date(0),
+  })
+
+  res.status(200).json({ message: 'User logged out' })
 })
 
 // route     GET /api/users/profile
