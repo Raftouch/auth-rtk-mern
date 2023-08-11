@@ -12,4 +12,10 @@
 - [ ] FRONT
 
   - [x] initial setup
-  - [ ] add routing
+  - [x] proxy in vite config
+  - [x] add tailwindcss
+  - [x] add routing
+  - [x] create header & footer
+  - [ ] create login & register forms
+  - [ ] redux toolkit setup
+  - [ ]
