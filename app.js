@@ -2,12 +2,14 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 require('dotenv').config()
+const cookieParser = require('cookie-parser')
 const { notFound, errorHandler } = require('./middleware/error')
 const port = process.env.PORT || 3000
 const db = process.env.MONGO_DB
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cookieParser())
 app.use('/api/users', require('./routes/user'))
 app.use(notFound, errorHandler)
 
