@@ -16,6 +16,8 @@
   - [x] add tailwindcss
   - [x] add routing
   - [x] create header & footer
-  - [ ] create login & register forms
-  - [ ] redux toolkit setup
-  - [ ]
+  - [x] create login & register forms
+  - [ ] redux toolkit
+    - [x] setup store
+    - [ ] create slices
+    - [ ]
