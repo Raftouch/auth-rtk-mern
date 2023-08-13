@@ -6,6 +6,7 @@ import Button from '../components/Button'
 import { useLoginMutation } from '../slices/usersApi'
 import { setCredentials } from '../slices/auth'
 import { toast } from 'react-toastify'
+import Loader from '../components/Loader'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -14,7 +15,7 @@ export default function LoginPage() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const [login] = useLoginMutation()
+  const [login, { isLoading }] = useLoginMutation()
 
   const { userInfo } = useSelector((state) => state.auth)
 
@@ -60,6 +61,9 @@ export default function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+
+        {isLoading && <Loader />}
+
         <Button>
           <button type="submit">Login</button>
         </Button>
