@@ -20,4 +20,5 @@
   - [ ] redux toolkit
     - [x] setup store
     - [ ] create slices
-    - [ ]
+  - [ ] add toastify for notifications
+  - [ ] login, register & logout functionalities
