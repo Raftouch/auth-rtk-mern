@@ -5,6 +5,7 @@ import Form from '../components/Form'
 import Button from '../components/Button'
 import { useLoginMutation } from '../slices/usersApi'
 import { setCredentials } from '../slices/auth'
+import { toast } from 'react-toastify'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -32,7 +33,7 @@ export default function LoginPage() {
       dispatch(setCredentials({ ...response }))
       navigate('/')
     } catch (err) {
-      console.log(err?.data?.message || err.error)
+      toast.error(err?.data?.message || err.error)
     }
   }
 
