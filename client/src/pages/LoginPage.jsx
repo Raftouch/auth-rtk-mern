@@ -1,16 +1,39 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import Form from '../components/Form'
 import Button from '../components/Button'
+import { useLoginMutation } from '../slices/usersApi'
+import { setCredentials } from '../slices/auth'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const [login] = useLoginMutation()
+
+  const { userInfo } = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    // user is logged in
+    if (userInfo) {
+      navigate('/')
+    }
+  }, [navigate, userInfo])
+
   const submitHandler = async (e) => {
     e.preventDefault()
-
-    console.log('submit')
+    try {
+      const response = await login({ email, password }).unwrap()
+      // setting user to local storage & state
+      dispatch(setCredentials({ ...response }))
+      navigate('/')
+    } catch (err) {
+      console.log(err?.data?.message || err.error)
+    }
   }
 
   return (
