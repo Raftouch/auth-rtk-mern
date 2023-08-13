@@ -20,5 +20,7 @@
   - [ ] redux toolkit
     - [x] setup store
     - [ ] create slices
-  - [ ] add toastify for notifications
-  - [ ] login, register & logout functionalities
+  - [x] add toastify for notifications
+  - [x] add login, register & logout functionalities
+  - [ ] create getProfile page
+  - [ ] add updateProfile functionality
