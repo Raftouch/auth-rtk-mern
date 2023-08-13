@@ -9,7 +9,7 @@
   - [x] add logout (destroy cookie)
   - [x] create auth middleware (to protect routes)
 
-- [ ] FRONT
+- [x] FRONT
 
   - [x] initial setup
   - [x] proxy in vite config
@@ -17,10 +17,11 @@
   - [x] add routing
   - [x] create header & footer
   - [x] create login & register forms
-  - [ ] redux toolkit
+  - [x] redux toolkit
     - [x] setup store
-    - [ ] create slices
+    - [x] create slices
   - [x] add toastify for notifications
   - [x] add login, register & logout functionalities
-  - [ ] create getProfile page
-  - [ ] add updateProfile functionality
+  - [x] create getProfile page
+  - [x] create private route
+  - [x] add updateProfile functionality
