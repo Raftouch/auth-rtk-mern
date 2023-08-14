@@ -3,9 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearCredentials } from '../slices/auth'
 import { useLogoutMutation } from '../slices/usersApi'
 import { Icon } from '@iconify/react'
+import { useState } from 'react'
 
 export default function Navbar() {
   const { userInfo } = useSelector((state) => state.auth)
+
+  const [openMenu, setOpenMenu] = useState(false)
+  const navLinkStyle = "hover:bg-gray-200 px-2"
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -35,12 +39,21 @@ export default function Navbar() {
       <span className="flex gap-5">
         {userInfo ? (
           <>
-            <div className="text-green-600 uppercase">{userInfo.name}</div>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/profile">Profile</NavLink>
-            <NavLink to="/logout" onClick={logoutHandler}>
-              Logout
-            </NavLink>
+            <div
+              className="relative uppercase text-blue-600 cursor-pointer"
+              onClick={() => setOpenMenu((prev) => !prev)}
+            >
+              {userInfo.name}
+            </div>
+            {openMenu && (
+              <div className="absolute top-20 right-3 items-end flex flex-col gap-1">
+                <NavLink className={navLinkStyle} to="/dashboard">Dashboard</NavLink>
+                <NavLink className={navLinkStyle} to="/profile">Profile</NavLink>
+                <NavLink className={navLinkStyle} to="/logout" onClick={logoutHandler}>
+                  Logout
+                </NavLink>
+              </div>
+            )}
           </>
         ) : (
           <>
