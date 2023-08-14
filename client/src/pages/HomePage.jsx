@@ -1,5 +1,5 @@
+import dancingGirl from '../assets/dancing-girl.png'
+
 export default function HomePage() {
-  return (
-    <div>HomePage</div>
-  )
+  return <img className="pt-28" src={dancingGirl} alt="dancing-girl" />
 }

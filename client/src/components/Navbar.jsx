@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearCredentials } from '../slices/auth'
 import { useLogoutMutation } from '../slices/usersApi'
+import { Icon } from '@iconify/react'
 
 export default function Navbar() {
   const { userInfo } = useSelector((state) => state.auth)
@@ -25,13 +26,17 @@ export default function Navbar() {
 
   return (
     <nav className="h-[80px] w-full flex justify-between items-center px-5 border-b-2">
-      <NavLink to="/">
-        <img src="" alt="" />
-      </NavLink>
+      <Icon
+        icon="arcticons:just-dance-now"
+        color="black"
+        width="70"
+        height="70"
+      />
       <span className="flex gap-5">
         {userInfo ? (
           <>
             <div className="text-green-600 uppercase">{userInfo.name}</div>
+            <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/profile">Profile</NavLink>
             <NavLink to="/logout" onClick={logoutHandler}>
               Logout

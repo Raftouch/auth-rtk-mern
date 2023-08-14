@@ -23,7 +23,7 @@ export default function RegisterPage() {
 
   useEffect(() => {
     if (userInfo) {
-      navigate('/')
+      navigate('/dashboard')
     }
   }, [navigate, userInfo])
 
@@ -36,7 +36,7 @@ export default function RegisterPage() {
         const response = await register({ name, email, password }).unwrap()
         // setting user to local storage & state
         dispatch(setCredentials({ ...response }))
-        navigate('/')
+        navigate('/dashboard')
       } catch (err) {
         toast.error(err?.data?.message || err.error)
       }

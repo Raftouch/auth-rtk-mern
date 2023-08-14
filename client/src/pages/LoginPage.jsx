@@ -22,7 +22,7 @@ export default function LoginPage() {
   useEffect(() => {
     // user is logged in
     if (userInfo) {
-      navigate('/')
+      navigate('/dashboard')
     }
   }, [navigate, userInfo])
 
@@ -32,7 +32,7 @@ export default function LoginPage() {
       const response = await login({ email, password }).unwrap()
       // setting user to local storage & state
       dispatch(setCredentials({ ...response }))
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       toast.error(err?.data?.message || err.error)
     }
