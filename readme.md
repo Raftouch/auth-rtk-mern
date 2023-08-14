@@ -30,4 +30,4 @@
 
   - [x] front : npm run build (to create dist folder)
   - [x] back : configure production mode in app.js
- 
+  - [x] test
