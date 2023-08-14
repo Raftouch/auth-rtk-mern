@@ -25,3 +25,9 @@
   - [x] create getProfile page
   - [x] create private route
   - [x] add updateProfile functionality
+
+- [x] Prepare for production
+
+  - [x] front : npm run build (to create dist folder)
+  - [x] back : configure production mode in app.js
+ 
