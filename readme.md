@@ -25,7 +25,7 @@
   - [x] create getProfile page
   - [x] create private route
   - [x] add updateProfile functionality
-  - [ ] create dropdown navbar menu
+  - [x] create dropdown navbar menu
 
 - [x] Prepare for production
 
